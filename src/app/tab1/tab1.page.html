@@ -3,7 +3,9 @@
     <ion-title class="ion-text-center titulo-pagina">Pokedex BSN</ion-title>
 
     <ion-buttons slot="end">
-      <ion-button (click)="alternarTema()" [ngClass]="{ 'rotate': true }">
+      <ion-button 
+        (click)="alternarTema()" 
+        [ngClass]="{ 'rotate': true }">
         <ion-icon 
           slot="icon-only" 
           [name]="temaEscuro ? 'sunny-outline' : 'moon'"

@@ -7,7 +7,17 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class Tab1Page {
+  nomePokemon: string = '';
+  
+  procurarPokemon() {
+    if(!this.nomePokemon.trim()) {
+      console.log('digite um nome');
+      return;
+    }
 
-  constructor() {}
+    const nome = this.nomePokemon.trim().toLowerCase();
+    console.log('procurando:', nome);
 
+    // call service
+  }
 }

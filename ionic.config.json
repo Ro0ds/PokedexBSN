@@ -1,0 +1,7 @@
+{
+  "name": "pokedexBSN",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

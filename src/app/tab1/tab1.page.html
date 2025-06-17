@@ -1,21 +1,62 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <ion-title class="ion-text-center">Pokedex BSN</ion-title>
+    <ion-title class="ion-text-center titulo-pagina">Pokedex BSN</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="alternarTema()" [ngClass]="{ 'rotate': true }">
+        <ion-icon 
+          slot="icon-only" 
+          [name]="temaEscuro ? 'sunny-outline' : 'moon'"
+          [ngClass]="{ 'theme-toggle-animation': animarIcone }">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <form (submit)="procurarPokemon()">
-    <ion-item>
+    <ion-item class="itens">
       <ion-input
+        class="custom"
+        autocomplete="on"
         [(ngModel)]="nomePokemon"
         name="nomePokemon"
         placeholder="Digite o nome do Pokémon"
-        clearInput
         required
         (keydown.enter)="procurarPokemon()">
       </ion-input>
-      <ion-button type="submit" slot="end">Procurar</ion-button>
+      <ion-button 
+        type="submit" 
+        slot="end" 
+        class="custom">
+        Procurar
+      </ion-button>
     </ion-item>
   </form>
+
+  <ion-card *ngIf="pokemon">
+    <div class="card-pokemon">
+      <ion-card-header>
+        <ion-card-title 
+          class="ion-text-capitalize nome-pokemon">
+          {{ pokemon.nome }}
+        </ion-card-title>
+      </ion-card-header>
+
+      <img 
+        [src]="pokemon.imagem" 
+        [alt]="pokemon.nome" 
+        width="150"
+        height="150" />
+      <form>
+        <ion-button 
+          type="submit" 
+          slot="end"
+          class="botao-infos">
+          + Infos
+        </ion-button>
+      </form>
+    </div>
+  </ion-card>
 </ion-content>

@@ -1,0 +1,59 @@
+* {
+    color: var(--ion-text-color);
+}
+
+ion-input.custom {
+    --color: var(--ion-color-primary-contrast);
+    background-color: var(--ion-background-color);
+    font-weight: bold;
+    color: var(--ion-text-color);
+    transition: background-color 0.2 ease, color 0.6s ease;
+}
+
+ion-button.custom {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-primary-contrast);
+    font-weight: bold;
+    color: var(--ion-text-color);
+    transition: color 0.6s ease;
+}
+
+ion-item.itens {
+    --background: var(--ion-background-color);
+    --border-color: var(--ion-color-step-300);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: background-color 0.6s ease, border-color 0.6s ease;
+}
+
+ion-card {
+    --background: var(--ion-color-primary);
+}
+
+.titulo-pagina {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--ion-text-color);
+    transition: color 0.6s ease;
+}
+
+.card-pokemon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nome-pokemon {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--ion-text-color);
+    transition: color 0.6s ease;
+}
+
+.botao-infos {
+    --background: var(--ion-button-info-color);
+    --color: var(--ion-color-primary-contrast);
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.6s ease;
+}

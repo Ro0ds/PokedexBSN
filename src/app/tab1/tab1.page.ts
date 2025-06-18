@@ -13,8 +13,6 @@ export class Tab1Page {
   
   nomePokemon: string = '';
   pokemon: any = null;
-  temaEscuro: boolean = false;
-  animarIcone: boolean = false;
   
   procurarPokemon() {
     const nome = this.nomePokemon.trim().toLowerCase();
@@ -37,20 +35,5 @@ export class Tab1Page {
         this.pokemon = null;
       }
     })
-  }
-
-  alternarTema() {
-    this.temaEscuro = !this.temaEscuro;
-
-    if(this.temaEscuro) {
-      document.body.classList.remove('light');
-      document.body.classList.add('dark');
-    } else {
-      document.body.classList.remove('dark');
-      document.body.classList.add('light');
-    }
-
-    this.animarIcone = true;
-    setTimeout(() => this.animarIcone = false, 500);
   }
 }

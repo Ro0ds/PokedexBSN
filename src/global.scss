@@ -36,6 +36,19 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
 
+body {
+  background-color: var(--ion-background-color);
+  transition: background-color 0.3s ease;
+}
+
+ion-content {
+  --background: transparent !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  --padding-top: calc(var(--ion-safe-area-top) + 56px);
+  --padding-bottom: calc(var(--ion-safe-area-bottom) + 56px);
+}
+
 .theme-toggle-animation  {
   animation: rotate-icon 0.5s ease;
 }

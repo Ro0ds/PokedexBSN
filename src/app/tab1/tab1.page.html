@@ -31,18 +31,15 @@
       </ion-card-header>
 
       <img 
+        class="imagem-pokemon"
         [src]="pokemon.imagem" 
-        [alt]="pokemon.nome" 
-        width="150"
-        height="150" />
-      <form>
-        <ion-button 
-          type="submit" 
-          slot="end"
-          class="botao-infos">
-          + Infos
-        </ion-button>
-      </form>
+        [alt]="pokemon.nome" />
+      <ion-button 
+        (click)="irParaTab2()"
+        slot="end"
+        class="botao-infos">
+        + Infos
+      </ion-button>
     </div>
   </ion-card>
 </ion-content>

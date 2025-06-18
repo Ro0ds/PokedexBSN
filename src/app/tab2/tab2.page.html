@@ -1,9 +1,81 @@
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card *ngIf="dadosPokemon">
+    <div class="card-conteudo">
+      <ion-card-header>
+        <div class="info-esquerda">
+          <div class="titulo-pokemon">
+            <ion-card-title 
+              class="ion-text-capitalize nome-pokemon">
+                {{ dadosPokemon.nome }}
+              </ion-card-title>
+              <ion-button 
+                fill="clear"
+                (click)="alternarFavorito()">
+                  <ion-icon
+                    slot="icon-only"
+                    [name]="favorito ? 'heart' : 'heart-outline'">
+                  </ion-icon>
+              </ion-button>
+            </div>
+            <div class="tipo-pokemon">
+              <ion-label class="texto-tipo">Type:</ion-label>
+              <ion-card-subtitle class="texto-pokemon">
+                {{ dadosPokemon.tipo }}
+              </ion-card-subtitle>
+            </div>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+          <ion-card-content>
+            <ion-list>
+              <ion-item class="item-compact">
+                {{ dadosPokemon.vida_label }}:<ion-label> {{ dadosPokemon.vida }}</ion-label>
+              </ion-item>
+              <ion-item class="item-compact">
+                {{ dadosPokemon.ataque_label }}:<ion-label> {{ dadosPokemon.ataque }}</ion-label>
+              </ion-item>
+              <ion-item class="item-compact">
+                {{ dadosPokemon.defesa_label }}:<ion-label> {{ dadosPokemon.defesa }}</ion-label>
+              </ion-item>
+              <ion-item class="item-compact">
+                {{ dadosPokemon.ataque_especial_label }}:<ion-label> {{ dadosPokemon.ataque_especial }}</ion-label>
+              </ion-item>
+              <ion-item class="item-compact">
+                {{ dadosPokemon.defesa_especial_label }}:<ion-label> {{ dadosPokemon.defesa_especial }}</ion-label>
+              </ion-item>
+              <ion-item class="item-compact">
+                {{ dadosPokemon.velocidade_label }}:<ion-label> {{ dadosPokemon.velocidade }}</ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </div>
+      </ion-card-header>
+
+      <div class="imagens-pokemon">
+        <ion-label>Normal</ion-label>
+        <img class="imagem-pokemon" 
+          [src]="dadosPokemon.imagem" 
+          [alt]="dadosPokemon.nome" />
+        <ion-label>Shiny</ion-label>
+        <img class="imagem-pokemon-shiny"
+          [src]="dadosPokemon.imagem_shiny" 
+          alt="shiny" />
+      </div>
+    </div>
+  </ion-card>
+
+  <ion-card *ngIf="favoritos.length > 0">
+  <ion-card-header>
+    <ion-card-title class="favoritos-titulo">Favoritos</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let poke of favoritos">
+        <ion-avatar slot="start">
+          <img [src]="poke.imagem" />
+        </ion-avatar>
+        <ion-label>{{ poke.nome.toUpperCase() }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
 </ion-content>

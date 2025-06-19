@@ -3,10 +3,9 @@
 ### Descrição
 Projeto para vaga Fullstack Jr da BSN.
 Aplicação em Ionic que consome a PokéAPI e exibe alguns detalhes de Pokémons com tema escuro/claro e sistema de favoritos.
-<hr />
 
-### Demonstração
-// -- //
+[Clique aqui para acessar.](pokedexbsn.vercel.app)
+<hr />
 
 ### Funcionalidades
 * Busca de Pokémon
